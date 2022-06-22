@@ -6,23 +6,11 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 19:13:23 by dofranci          #+#    #+#             */
-/*   Updated: 2022/06/22 01:22:56 by dofranci         ###   ########.fr       */
+/*   Updated: 2022/06/21 21:40:56 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-
-//str = "passar no mercado hoje" 
-//c = " "
-//   012345\0
-// 0 passar
-// 1 no
-// 2 mercado
-// 3 hoje"
-// NULL 
-
-// **str == str[2]4] == "a" 
 
 static size_t	ft_countwords(const char *s, char c)
 {
