@@ -6,15 +6,20 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 20:36:20 by dofranci          #+#    #+#             */
-/*   Updated: 2022/06/16 16:37:31 by dofranci         ###   ########.fr       */
+/*   Updated: 2022/09/13 21:19:47 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+#endif
+
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -40,7 +45,7 @@ int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
@@ -50,5 +55,13 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*get_next_line(int fd);
+int	    ft_printf(const char *format, ...);
+int	    ft_putnbr2(unsigned int n);
+int	    ft_putnbr(int n);
+int	    ft_putptr2(unsigned long int n);
+int	    ft_putptr(unsigned long long int n);
+int     ft_putx(unsigned int n, char conv);
+int     ft_putchar(char c);
 
 #endif

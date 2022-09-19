@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/14 19:15:08 by dofranci          #+#    #+#             */
-/*   Updated: 2022/06/15 02:13:14 by dofranci         ###   ########.fr       */
+/*   Created: 2022/06/14 19:12:46 by dofranci          #+#    #+#             */
+/*   Updated: 2022/06/23 22:06:46 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s3;
-	int		size1;
-	int		size2;
-	int		size3;
-
-	size1 = ft_strlen(s1) + 1;
-	size2 = ft_strlen(s2);
-	size3 = size1 + size2;
-	s3 = ft_calloc(size3, 1);
-	ft_strlcpy(s3, s1, size1);
-	ft_strlcat(s3, s2, size3);
-	return (s3);
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }
