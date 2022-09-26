@@ -52,21 +52,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		size--;
 	return (ft_substr((char *)s1, 0, size + 1));
 }
-
-int main(void)
-{
-	char str[]="    1WZhv8ROpsHGM LXxFDzBbgE ye3wa4gl pnJNPZOahXUWvw htPqaeo 1K7oDbgwdCWEB 1IK jpnP N6WfKvruniEgy7 QfqojIRbzUrl1 ";
-	char expected[]="1WZhv8ROpsHGM LXxFDzBbgE ye3wa4gl pnJNPZOahXUWvw htPqaeo 1K7oDbgwdCWEB 1IK jpnP N6WfKvruniEgy7 QfqojIRbzUrl1";
-	char set[]=" ";
-	char *resultado;
-
-	resultado = ft_strtrim(str, set);
-	printf("str:%s\n", str);
-	printf("expected:%s\n", expected);
-	printf("resultado:%s\n", resultado);
-	printf("strncmp:%i\n", strcmp(expected, resultado));
-
-	printf("strlenexpected:%lu\n", strlen(expected));
-	printf("strlenresultado:%lu\n", strlen(resultado));
-	return(0);
-}
